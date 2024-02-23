@@ -31,7 +31,7 @@ public class UserController {
     @GetMapping("/users")
     public List<UserInfoDto> getUsersByState(@RequestParam(name = "state", required = false) String state) {
         if (state != null) {
-            UserState userState = UserState.valueOf(state);
+            UserState userState = UserState.valueOf(state.toUpperCase());
             return userService.getUsers(userState);
         }
         return userService.getUsers();

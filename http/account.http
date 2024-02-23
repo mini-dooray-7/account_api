@@ -1,0 +1,44 @@
+POST http://localhost:8080/auth/register
+Content-Type: application/json
+
+{
+  "userId": "io",
+  "userName": "shane",
+  "userPassword": "123",
+  "userEmail": "e@email.com"
+}
+
+###
+
+GET http://localhost:8080/auth/login/io
+Accept: application/json
+
+###
+GET http://localhost:8080/users/io
+Accept: application/json
+
+###
+GET http://localhost:8080/users
+Accept: application/json
+
+###
+GET http://localhost:8080/users?state=registered
+Accept: application/json
+
+###
+PUT http://localhost:8080/users/info/io
+Content-Type: application/json
+
+{
+  "userName": "shanesss"
+}
+
+###
+PUT http://localhost:8080/users/state/io
+Content-Type: application/json
+
+{
+  "userState": "INACTIVATED"
+}
+
+###
